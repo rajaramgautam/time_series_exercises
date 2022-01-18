@@ -19,7 +19,7 @@ def prepare_store_data():
     df['sale_date'] = pd.to_datetime(df['sale_date'])  # convert sales date to datetime format
     df = df.set_index(df.sale_date).sort_index()       # set index and sort index for sale_date
     df['month'] = df.sale_date.dt.month                # create a month column
-    df['day of week'] = df.sale_date.dt.day_name()     # create a day name column
+    df['day_of_week'] = df.sale_date.dt.day_name()     # create a day name column
     df['sales_total'] = df.sale_amount * df.item_price # create a sales total column
     
     return df
